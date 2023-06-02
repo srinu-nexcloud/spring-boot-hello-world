@@ -4,7 +4,11 @@ pipeline {
       stages {
         stage ("build now") {
             steps {
-                echo "build stage"
+                sh """
+                    ls -lrt
+                    cd spring-boot-hello-world
+                    mvn install
+                    """
                 
             }
         }
